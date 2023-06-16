@@ -9,13 +9,14 @@ interface NotificationService {
     fun send(to: String, from: String, emailBody: String)
 }
 
-@ApplicationScope
+@ActivityScope
 class EmailService @Inject constructor() : NotificationService{
     override fun send(to: String, from: String, body: String) {
         Log.i(TAG,  "Sent email from : $from To $to with email body $body")
     }
 }
 
+@ActivityScope
 class MessageService(private val retryCount: Int) : NotificationService{
     override fun send(to: String, from: String, body: String) {
         Log.i(TAG,  "Sent message from : $from To $to with email body $body with retrycount $retryCount")

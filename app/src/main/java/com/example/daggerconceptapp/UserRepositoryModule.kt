@@ -8,6 +8,7 @@ import javax.inject.Named
 @Module
 class UserRepositoryModule {
 
+    @ActivityScope
     @SqlQualifier
     @Provides
     fun getSQLRepository(sqlRepository: SQLRepository) : UserRepository {
