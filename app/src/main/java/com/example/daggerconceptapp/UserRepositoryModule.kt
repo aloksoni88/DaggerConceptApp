@@ -20,8 +20,8 @@ class UserRepositoryModule {
 
     @Named(Constants.QUALIFIER_FIREBASE)
     @Provides
-    fun getFirebaseRepository(): UserRepository {
-        return FirebaseRepository()
+    fun getFirebaseRepository(firebaseRepository: FirebaseRepository): UserRepository {
+        return firebaseRepository
     }
 
 }
